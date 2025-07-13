@@ -5,169 +5,184 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Exploralos - Inicio</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+   * {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fffaf2;
-      color: #333;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffaf2;
+  color: #333;
+}
 
-    header {
-      background-color: #6a1b9a;
-      color: white;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .logo {
-      width: 120px;
-      height: auto;
-      border-radius: 50%;
-    }
+.logo {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+}
 
-    .barra {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
+.barra {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
 
-    nav {
-      margin-top: 0.5rem;
-      display: flex;
-      gap: 1rem;
-    }
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
 
-    nav a {
-      color: #ffe082;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
+nav a {
+  color: #ffe082;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
 
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 5px #ffeb3b;
-    }
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #ffeb3b;
+}
 
-    .presentacion {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 2rem;
-      background-color: #f3e5f5;
-    }
+.presentacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f3e5f5;
+}
 
-    .presentacion .texto {
-      flex: 1 1 350px;
-    }
+.presentacion .texto {
+  flex: 1 1 350px;
+}
 
-    .presentacion h2 {
-      color: #6a1b9a;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
+.presentacion h2 {
+  color: #6a1b9a;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
 
-    .presentacion p {
-      text-align: justify;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+.presentacion p {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
-    .mapa {
-      width: 400px;
-      height: auto;
-      border-radius: 1rem;
-    }
+.mapa {
+  width: 400px;
+  height: auto;
+  border-radius: 1rem;
+}
 
-    main {
-      padding: 2rem;
-    }
+main {
+  padding: 2rem;
+}
 
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      color: #6a1b9a;
-    }
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #6a1b9a;
+}
 
-    .lugares-vista-previa {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
+.lugares-vista-previa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-    .lugar-card {
-      display: block;
-      width: 290px;
-      background-color: white;
-      border-radius: 12px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.lugar-card {
+  display: block;
+  width: 290px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .lugar-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 20px rgba(106, 27, 154, 0.3);
-    }
+.lugar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(106, 27, 154, 0.3);
+}
 
-    .lugar-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+.lugar-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
 
-    .lugar-card h3 {
-      margin: 1rem 1rem 0.5rem;
-      color: #512da8;
-    }
+.lugar-card h3 {
+  margin: 1rem 1rem 0.5rem;
+  color: #512da8;
+}
 
-    .lugar-card p {
-      margin: 0 1rem 1.5rem;
-      font-size: 0.95rem;
-      color: #555;
-    }
+.lugar-card p {
+  margin: 0 1rem 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
 
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: #ede7f6;
-      color: #333;
-      margin-top: 3rem;
-    }
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #ede7f6;
+  color: #333;
+  margin-top: 3rem;
+}
 
-  
+/* --- Media Queries para responsividad --- */
 
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 
-      .barra {
-        align-items: center;
-      }
+  nav {
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 0.8rem;
+  }
 
-      .mapa {
-        width: 100%;
-        max-width: 320px;
-      }
+  .mapa {
+    width: 100%;
+    max-width: 320px;
+  }
 
-      .lugar-card {
-        width: 90%;
-      }
-    }
+  .lugar-card {
+    width: 90%;
+  }
+}
+
+@media (min-width: 769px) {
+  .lugar-card {
+    width: 290px;
+  }
+}
+
   </style>
 </head>
 <body>
