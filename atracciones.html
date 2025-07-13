@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exploralos - Atracciones de Morelos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8e1; /* tono claro amarillo */
+      margin: 0;
+      padding: 0;
+      color: #4a148c; /* morado oscuro */
+    }
+
+    header {
+      background-color: #6a1b9a; /* morado */
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(106,27,154,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .logo {
+      width: 140px;
+      height: auto;
+    
+    }
+
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 32rem;
+}
+
+.logo-titulo h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: white;
+}
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #ffe082;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #ffeb3b;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    main h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      color: #6a1b9a;
+      text-shadow: 1px 1px 3px #ffeb3b;
+    }
+
+    main p.intro {
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #5d4037;
+      font-weight: 600;
+    }
+
+    /* Tarjetas de comida */
+    .comida-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .comida-card {
+      width: 300px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(106,27,154,0.15);
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .comida-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(106,27,154,0.35);
+    }
+
+    .comida-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 5px solid #ffeb3b;
+    }
+
+    .comida-card h3 {
+      margin: 1rem;
+      color: #6a1b9a;
+      font-size: 1.4rem;
+    }
+
+    .comida-card p {
+      margin: 0 1rem 1.2rem 1rem;
+      color: #555;
+      flex-grow: 1;
+      font-weight: 500;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.65);
+      overflow-y: auto;
+      padding: 3rem 1rem;
+      box-sizing: border-box;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 15px 35px rgba(106,27,154,0.45);
+      animation: fadeInUp 0.4s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      color: #6a1b9a;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content p {
+      line-height: 1.6;
+      color: #444;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(106,27,154,0.2);
+      margin-bottom: 1.5rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #6a1b9a;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s ease;
+      line-height: 1;
+    }
+
+    .close-btn:hover {
+      color: #c352f7;
+    }
+
+  
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #ffeb3b;
+      color: #4a148c;
+      font-weight: 700;
+      margin-top: 4rem;
+      box-shadow: 0 -4px 10px rgba(255,235,59,0.3);
+    }
+
+      .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .boton {
+      background-color: #35b7a9;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #2e6043;
+    }
+    
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .comida-lista {
+        justify-content: center;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .carrusel-container {
+      position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carrusel {
+      display: flex;
+      width: 500%; /* depende de cuántas imágenes haya */
+      animation: slide 20s infinite;
+    }
+
+    .carrusel img {
+      width: 300vw; /* ancho de la ventana */
+      height: 400px; /* ajusta a lo que necesites */
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100vw); }
+      66% { transform: translateX(-200vw); }
+      100% { transform: translateX(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+      
+    </nav>
+  </header>
+
+  <main>
+    <h2>Atracciones Destacadas en Morelos</h2>
+    <p class="intro">
+      Morelos ofrece una gran variedad de atracciones para todos los gustos: zonas arqueológicas, parques naturales, balnearios, pueblos mágicos, cascadas, senderos ecológicos y actividades culturales. ¡Explora y vive la experiencia!
+    </p>
+    <br>
+
+    <div class="carrusel-container">
+  <div class="carrusel">
+    <img src="Imagenes/jardines-de-mexico-3-1000x563.jpg" alt="Imagen 1">
+    <img src="Imagenes/las-estacas-parque-natural-panoramica.webp" alt="Imagen 2">
+    <img src="Imagenes/lagunaaa.jpg" alt="Imagen 3">
+    <img src="Imagenes/xochi3.jpg" alt="Imagen 4">
+    <img src="Imagenes/temazcal.jpg" alt="Imagen 5">
+  </div>
+</div>
+<br>
+    <section class="comida-lista">
+      <div class="comida-card" onclick="openModal('modal-tepoztlan')">
+        <img src="Imagenes/tepoz1.jpg" alt="Tepoztlán" />
+        <h3>Tepoztlán</h3>
+        <p>Pueblo mágico rodeado de montañas, ideal para senderismo, temazcal y visitar el Tepozteco.</p>
+      </div>
+
+      <div class="comida-card" onclick="openModal('modal-lasestacas')">
+        <img src="Imagenes/las-estacas-parque-natural-panoramica.webp" alt="Las Estacas" />
+        <h3>Las Estacas</h3>
+        <p>Parque natural con río cristalino donde puedes nadar, bucear, acampar o hacer kayak.</p>
+      </div>
+
+      <div class="comida-card" onclick="openModal('modal-xochicalco')">
+        <img src="Imagenes/xochi3.jpg" alt="Xochicalco" />
+        <h3>Zona Arqueológica Xochicalco</h3>
+        <p>Impresionante sitio prehispánico declarado Patrimonio de la Humanidad por la UNESCO.</p>
+      </div>
+
+      <div class="comida-card" onclick="openModal('modal-paracaidismo')">
+    <img src="Imagenes/paracaidas.webp" alt="Paracaidismo Morelos" />
+    <h3>Paracaidismo en Morelos</h3>
+    <p>Vive la adrenalina de saltar en paracaídas con vistas espectaculares de todo el estado.</p>
+  </div>
+
+  <!-- Salto de San Antón -->
+  <div class="comida-card" onclick="openModal('modal-salto')">
+    <img src="Imagenes/saltoo.webp" alt="Salto de San Antón" />
+    <h3>Salto de San Antón</h3>
+    <p>Una cascada impresionante dentro de Cuernavaca, rodeada de naturaleza exuberante.</p>
+  </div>
+
+  <!-- Laguna de Coatetelco -->
+  <div class="comida-card" onclick="openModal('modal-coatetelco')">
+    <img src="Imagenes/lagcoat.jpg" alt="Laguna de Coatetelco" />
+    <h3>Laguna de Coatetelco</h3>
+    <p>Pasea en lancha y disfruta de la gastronomía típica a orillas de una laguna ancestral.</p>
+  </div>
+
+ 
+
+  <!-- Temazcal en Amatlán -->
+  <div class="comida-card" onclick="openModal('modal-temazcal')">
+    <img src="Imagenes/temazcal.jpg" alt="Temazcal en Amatlán" />
+    <h3>Temazcales</h3>
+    <p>Rituales ancestrales para renovar cuerpo y espíritu en el corazón del misticismo.</p>
+  </div>
+
+  <!-- Balneario Santa Isabel -->
+  <div class="comida-card" onclick="openModal('modal-santaisabel')">
+    <img src="Imagenes/Balneario_Santa_Isabel.jpg" alt="Balneario Santa Isabel" />
+    <h3>Balneario Santa Isabel</h3>
+    <p>Disfruta de albercas de agua termal en un ambiente familiar y relajado.</p>
+  </div>
+
+  <!-- Jardines de México -->
+  <div class="comida-card" onclick="openModal('modal-jardines')">
+    <img src="Imagenes/jardines-de-mexico-3-1000x563.jpg" alt="Jardines de México" />
+    <h3>Jardines de México</h3>
+    <p>Los jardines temáticos más grandes del mundo, llenos de belleza natural y arte paisajístico.</p>
+  </div>
+
+  <!-- Museo Casa Zapata -->
+  <div class="comida-card" onclick="openModal('modal-zapata')">
+    <img src="Imagenes/casa-zapata.jpg" alt="Casa Zapata" />
+    <h3>Museo Casa Zapata</h3>
+    <p>Sumérgete en la historia de Emiliano Zapata desde el lugar donde nació.</p>
+  </div>
+
+  <!-- Zona arqueológica Chalcatzingo -->
+  <div class="comida-card" onclick="openModal('modal-chalcatzingo')">
+    <img src="Imagenes/rrrrrr.jpg" alt="Chalcatzingo" />
+    <h3>Zona arqueológica Chalcatzingo</h3>
+    <p>Explora petrograbados olmecas y descubre uno de los secretos mejor guardados de Morelos.</p>
+  </div>
+
+
+
+    </section>
+
+    
+  </main>
+
+  <!-- Modal Tepoztlán -->
+  
+  <div id="modal-tepoztlan" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-tepoztlan')">&times;</span>
+      <h2>Tepoztlán</h2>
+      <p>Tepoztlán es un pueblo mágico enclavado en las montañas del Tepozteco. Es famoso por su mercado, temazcales, gastronomía (¡prueba las nieves!), y su mística energía.</p>
+      <img src="Imagenes/tepoz2.jpg" alt="Vista del Tepozteco" />
+      <img src="Imagenes/tepozteo.jpg" alt="Calles de Tepoztlán" />
+      <p>Subir al cerro del Tepozteco es una experiencia única donde se combina naturaleza, espiritualidad e historia.</p>
+
+      <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.google.com/maps?q=tepoztlán" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+    </div>
+  </div>
+
+  <!-- Modal Las Estacas -->
+  <div id="modal-lasestacas" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-lasestacas')">&times;</span>
+      <h2>Las Estacas</h2>
+      <p>Ubicado en Tlaltizapán, este parque natural alberga un río de agua cristalina ideal para nadar, esnorquelear o simplemente relajarte rodeado de vegetación exuberante.</p>
+      <img src="Imagenes/estacas1.jpg" alt="Río Las Estacas" />
+      <img src="Imagenes/estacas2.jpeg" alt="Zona de camping en Las Estacas" />
+      <p>Cuenta con zonas de camping, tirolesas, renta de kayak y actividades para toda la familia.</p>
+
+          <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=Las%20Estacas%20Parque%20Natural%20balneario%20las%20estacas&ss=ypid.YN9001x5239778035238218782&mb=18.73508~-99.119275~18.722135~-99.106357&description=Carretera%20Moyotepec-Tlaltizap%C3%A1n%208%2C%2062770%20Tlaltizap%C3%A1n%C2%B7Parque%20acu%C3%A1tico&usebfpr=true&dt=1752436800000&tt=Las%20Estacas%20Parque%20Natural&tsts0=%2526ty%253D18%2526q%253DLas%252520Estacas%252520Parque%252520Natural%252520balneario%252520las%252520estacas%2526ss%253Dypid.YN9001x5239778035238218782%2526mb%253D18.73508~-99.119275~18.722135~-99.106357%2526description%253DCarretera%252520Moyotepec-Tlaltizap%2525C3%2525A1n%2525208%25252C%25252062770%252520Tlaltizap%2525C3%2525A1n%2525C2%2525B7Parque%252520acu%2525C3%2525A1tico%2526usebfpr%253Dtrue%2526dt%253D1752436800000&tstt0=Las%20Estacas%20Parque%20Natural&cp=18.728608~-99.122257&lvl=16&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+  <!-- Modal Xochicalco -->
+  <div id="modal-xochicalco" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-xochicalco')">&times;</span>
+      <h2>Xochicalco</h2>
+      <p>Xochicalco es una antigua ciudad prehispánica construida sobre colinas. Su Templo de Quetzalcóatl, observatorio y estelas son testimonio del conocimiento astronómico de su gente.</p>
+      <img src="Imagenes/xochi2.jpg" alt="Templo de Xochicalco" />
+      <img src="Imagenes/xochicalco.png" alt="Panorámica de Xochicalco" />
+      <p>Visítalo y siente el poder de la historia que aún vibra entre sus piedras.</p>
+
+       <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?q=Xochicalco&satid=id.sid%3A95eb1fca-4f54-439b-d7df-2a931a9ddb48&FORM=KC2MAP&cp=18.804309%7E-99.296644&lvl=16.0" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+  <!-- Modal Paracaidismo -->
+  <div id="modal-paracaidismo" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-paracaidismo')">&times;</span>
+      <h2>paracaidismo en morelos</h2>
+      <p>Vive la adrenalina de saltar en paracaídas con vistas panorámicas espectaculares del estado.</p>
+      <img src="Imagenes/sk1.jpg" alt="Templo de Xochicalco" />
+      <p>Visita Skydive, un centro de Paracaidismo en saltos Tándem, con instructores certificados, los mejores equipos y una preciosa vista del Lago de Tequesquitengo.</p>
+      <img src="Imagenes/sk2.jpg" alt="Panorámica de Xochicalco" />
+      <p>¡Atrevete y vive la experiencia!</p>
+
+       <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=Skydive%20M%C3%A9xico-Paracaidismo%20Tequesquitengo%2C%20Calle%20Emiliano%20Zapata%2021%2C%20Puente%20de%20Ixtla%2C%20Morelos%2C%20M%C3%A9xico&ss=ypid.YN9001x18426254320906282584&mb=18.654713~-99.269822~18.641559~-99.258964&description=Calle%20Emiliano%20Zapata%2021%2C%2062670%20Puente%20de%20Ixtla%2C%20Morelos&cardbg=%23219AB6&dt=1752436800000&tt=Skydive%20M%C3%A9xico-Paracaidismo%20Tequesquitengo&tsts2=%2526ty%253D18%2526q%253DSkydive%252520M%2525C3%2525A9xico-Paracaidismo%252520Tequesquitengo%25252C%252520Calle%252520Emiliano%252520Zapata%25252021%25252C%252520Puente%252520de%252520Ixtla%25252C%252520Morelos%25252C%252520M%2525C3%2525A9xico%2526ss%253Dypid.YN9001x18426254320906282584%2526mb%253D18.654713~-99.269822~18.641559~-99.258964%2526description%253DCalle%252520Emiliano%252520Zapata%25252021%25252C%25252062670%252520Puente%252520de%252520Ixtla%25252C%252520Morelos%2526cardbg%253D%252523219AB6%2526dt%253D1752436800000&tstt2=Skydive%20M%C3%A9xico-Paracaidismo%20Tequesquitengo&cp=18.648136~-99.274864&lvl=16&pi=0&ftst=2&ftics=True&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+   <div id="modal-salto" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-salto')">&times;</span>
+      <h2>Salto de san Antón</h2>
+      <p>El Salto de San Antón es una hermosa cascada de más de 40 metros de altura, ubicada a solo 3 kilómetros de Cuernavaca, en el pueblo de San Antonio Analco..</p>
+      <img src="Imagenes/saltoo.webp" alt="Templo de Xochicalco" />
+
+      <p>Esta cascada es famosa por su abundante vegetación. Los visitantes pueden descender 100 metros a través de una escalinata hasta llegar a un mirador, donde pueden disfrutar de este espectacular paisaje natural. </p>
+      <img src="Imagenes/saltooooo.jpg" alt="Panorámica de Xochicalco" />
+      <p>Además, el Salto de San Antón ha sido un destino popular para turistas nacionales e internacionales desde finales del siglo XIX.</p>
+    
+    <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=salto%20san%20ant%C3%B3n&ss=ypid.YN9001x2951154558431519946&mb=18.929478~-99.255145~18.916345~-99.233987&description=Avenida%20del%20Salto%2C%2022%20Cuernavaca%2C%20Morelos%C2%B7Cascada&cardbg=%23219AB6&dt=1752436800000&tt=Salto%20de%20San%20Anton&tsts3=%2526ty%253D18%2526q%253Dsalto%252520san%252520ant%2525C3%2525B3n%2526ss%253Dypid.YN9001x2951154558431519946%2526mb%253D18.929478~-99.255145~18.916345~-99.233987%2526description%253DAvenida%252520del%252520Salto%25252C%25252022%252520Cuernavaca%25252C%252520Morelos%2525C2%2525B7Cascada%2526cardbg%253D%252523219AB6%2526dt%253D1752436800000&tstt3=Salto%20de%20San%20Anton&cp=18.922911~-99.249887&lvl=16&pi=0&ftst=3&ftics=True&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+   <div id="modal-coatetelco" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-coatetelco')">&times;</span>
+      <h2>Laguna de Coatetelco</h2>
+      <p>Laguna de Coatetelco en Morelos es una excelente opción para visitar un fin de semana y disfrutar de sus bellos paisajes y tranquilas aguas de la Laguna.</p>
+      <img src="Imagenes/lagunaa.jpg" alt="Templo de Xochicalco" />
+      <img src="Imagenes/lagunaaa.jpg" alt="Panorámica de Xochicalco" />
+      <p>Coatetelco es uno de los poblados prehispánicos que integran a Morelos; aquí se encuentra el famoso lago de Coatetelco, en su ribera podrá disfrutar de delicioso pescado fresco preparado en diversas formas.</p>
+    
+    <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=Laguna%20de%20coatetelco&ss=ypid.YN9001x8140104954462570029&mb=18.748349~-99.336898~18.735202~-99.315741&description=Av%20Coatetelco%2C%2062630%20Miacatl%C3%A1n%2C%20Morelos%C2%B7Atracciones%20y%20actividades&cardbg=%23219AB6&dt=1752436800000&tt=Monumento%20Laguna%20De%20Coatetelco&tsts4=%2526ty%253D18%2526q%253DLaguna%252520de%252520coatetelco%2526ss%253Dypid.YN9001x8140104954462570029%2526mb%253D18.748349~-99.336898~18.735202~-99.315741%2526description%253DAv%252520Coatetelco%25252C%25252062630%252520Miacatl%2525C3%2525A1n%25252C%252520Morelos%2525C2%2525B7Atracciones%252520y%252520actividades%2526cardbg%253D%252523219AB6%2526dt%253D1752436800000&tstt4=Monumento%20Laguna%20De%20Coatetelco&cp=18.741776~-99.331641&lvl=16&pi=0&ftst=4&ftics=True&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+
+
+
+   <div id="modal-temazcal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-temazcal')">&times;</span>
+      <h2>Temazcales</h2>
+      <p>El temazcal es un baño de vapor utilizado en Mesoamérica con fines higiénicos, rituales, terapéuticos y espirituales. Su nombre proviene de la palabra náhuatl “temazcalli”, que significa “casa de sudor”.</p>
+      <img src="Imagenes/temazcall.webp" alt="Templo de Xochicalco" />
+      <p>Es una práctica de la medicina tradicional mexicana que trabaja cuerpo, mente y espíritu</p>
+
+      <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=Casa%20de%20Medicina%20Ancestral%2C%20Tlaltonatzintli&ss=ypid.YN9001x15364061497464277414&mb=18.708666~-99.251851~18.702193~-99.241272&description=Camino%20de%20los%20Casauates%20No%201111%20Col.%20Tlapalehui%2C%2062680%20Xoxocotla%2C%20Morelos%C2%B7Medicina%20alternativa&cardbg=%23F98745&dt=1752436800000&tt=Casa%20de%20Medicina%20Ancestral%2C%20Tlaltonatzintli&tsts0=%2526ty%253D18%2526q%253DCasa%252520de%252520Medicina%252520Ancestral%25252C%252520Tlaltonatzintli%2526ss%253Dypid.YN9001x15364061497464277414%2526mb%253D18.708666~-99.251851~18.702193~-99.241272%2526description%253DCamino%252520de%252520los%252520Casauates%252520No%2525201111%252520Col.%252520Tlapalehui%25252C%25252062680%252520Xoxocotla%25252C%252520Morelos%2525C2%2525B7Medicina%252520alternativa%2526cardbg%253D%252523F98745%2526dt%253D1752436800000&tstt0=Casa%20de%20Medicina%20Ancestral%2C%20Tlaltonatzintli&cp=18.70543~-99.249222&lvl=17&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+      
+    
+    </div>
+  </div>
+
+ <div id="modal-santaisabel" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-santaisabel')">&times;</span>
+      <h2>Balneario Santa Isabel</h2>
+      <p>El Balneario Santa Isabel está en la reserva natural con manantiales, albercas, toboganes y una extensa área de campamento.</p>
+      <img src="Imagenes/sti1.jpg" alt="Templo de Xochicalco" />
+      <img src="Imagenes/sti2.jpg" alt="Panorámica de Xochicalco" />
+      <p>Este balneario es el lugar perfecto para disfrutar de un día inolvidable junto a tus seres queridos.</p>
+
+      <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=Balneario%20Santa%20Isabel%2C%20YAUTEPEC%20TLALTIZAPAN%20KM%2020%2C%20Tlaltizap%C3%A1n%2C%20MORELOS%2C%20M%C3%A9xico&ss=ypid.YN9001x12232439542990395584&mb=18.739673~-99.125991~18.726525~-99.104834&description=YAUTEPEC%20TLALTIZAPAN%20KM%2020%2C%2062770%20TLALTIZAP%C3%81N%2C%20MORELOS%C2%B7Piscina&cardbg=%23219AB6&dt=1752440400000&tt=Balneario%20Santa%20Isabel&tsts6=%2526ty%253D18%2526q%253DBalneario%252520Santa%252520Isabel%25252C%252520YAUTEPEC%252520TLALTIZAPAN%252520KM%25252020%25252C%252520Tlaltizap%2525C3%2525A1n%25252C%252520MORELOS%25252C%252520M%2525C3%2525A9xico%2526ss%253Dypid.YN9001x12232439542990395584%2526mb%253D18.739673~-99.125991~18.726525~-99.104834%2526description%253DYAUTEPEC%252520TLALTIZAPAN%252520KM%25252020%25252C%25252062770%252520TLALTIZAP%2525C3%252581N%25252C%252520MORELOS%2525C2%2525B7Piscina%2526cardbg%253D%252523219AB6%2526dt%253D1752440400000&tstt6=Balneario%20Santa%20Isabel&cp=18.733099~-99.120734&lvl=16&pi=0&ftst=6&ftics=True&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+   <div id="modal-jardines" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-jardines')">&times;</span>
+      <h2>Jardines de México</h2>
+      <p>Un lugar emblemático 100% mexicano con jardines temáticos, eventos, restaurante y servicios.</p>
+      <img src="Imagenes/jardines-mexico-morelos-2-ok.jpg" alt="Templo de Xochicalco" />
+      <img src="Imagenes/146.jpg" alt="Panorámica de Xochicalco" />
+      <p>Un lugar único en Morelos con siete jardines temáticos que exhiben 193 millones de flores. Disfruta de la belleza, la tranquilidad y la gastronomía en este escenario.</p>
+    
+    <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=Jardines%20de%20M%C3%A9xico%2C%20Autopista%20Mexico%20-%20Acapulco%20Km.%20129%2C%20S%2FN%2C%20Jojutla%2C%20MORELOS%2C%20M%C3%A9xico&ss=ypid.YN9001x12506473609479940931&mb=18.612766~-99.29836~18.599609~-99.277203&description=Autopista%20Mexico%20-%20Acapulco%20Km.%20129%2C%20S%2FN%2C%2062790%20Jojutla%2C%20MORELOS%C2%B7Parque%20de%20atracciones&cardbg=%23219AB6&dt=1752440400000&tt=Jardines%20de%20M%C3%A9xico&tsts7=%2526ty%253D18%2526q%253DJardines%252520de%252520M%2525C3%2525A9xico%25252C%252520Autopista%252520Mexico%252520-%252520Acapulco%252520Km.%252520129%25252C%252520S%25252FN%25252C%252520Jojutla%25252C%252520MORELOS%25252C%252520M%2525C3%2525A9xico%2526ss%253Dypid.YN9001x12506473609479940931%2526mb%253D18.612766~-99.29836~18.599609~-99.277203%2526description%253DAutopista%252520Mexico%252520-%252520Acapulco%252520Km.%252520129%25252C%252520S%25252FN%25252C%25252062790%252520Jojutla%25252C%252520MORELOS%2525C2%2525B7Parque%252520de%252520atracciones%2526cardbg%253D%252523219AB6%2526dt%253D1752440400000&tstt7=Jardines%20de%20M%C3%A9xico&cp=18.606188~-99.293103&lvl=16&pi=0&ftst=7&ftics=True&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+   <div id="modal-zapata" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-zapata')">&times;</span>
+      <h2>Museo casa Zapata</h2>
+      <p>Reabre con un nuevo guión museográfico que incluye, la exhibición de objetos del caudillo, como armas, su silla de montar y sombrero, e incluso, la ropa con la que fue asesinado el 10 de abril de 1919.</p>
+      <img src="Imagenes/Museo_de_Emiliano_Zapata.jpg" alt="Templo de Xochicalco" />
+
+      <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=museo%20casa%20zapata%20ubicaci%C3%B3n&ss=ypid.YN9001x13385550183903355081&mb=18.783233~-98.997009~18.770089~-98.975852&description=Ayuntamiento%2033%2C%2062710%20Anenecuilco%2C%20Morelos%C2%B7Museo%20de%20historia&cardbg=%23219AB6&dt=1752440400000&tt=Museo%20y%20Casa%20de%20Emiliano%20Zapata&tsts0=%2526ty%253D18%2526q%253Dmuseo%252520casa%252520zapata%252520ubicaci%2525C3%2525B3n%2526ss%253Dypid.YN9001x13385550183903355081%2526mb%253D18.783233~-98.997009~18.770089~-98.975852%2526description%253DAyuntamiento%25252033%25252C%25252062710%252520Anenecuilco%25252C%252520Morelos%2525C2%2525B7Museo%252520de%252520historia%2526cardbg%253D%252523219AB6%2526dt%253D1752440400000&tstt0=Museo%20y%20Casa%20de%20Emiliano%20Zapata&cp=18.776661~-98.991752&lvl=16&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+ <div id="modal-chalcatzingo" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-chalcatzingo')">&times;</span>
+      <h2>Zona arqueológica Chalcatzingo</h2>
+      <p>La zona arqueológica de Chalcatzingo es un interesante vestigio de la antigüedad que revela los secretos de una civilización intrigante en el corazón de Morelos.</p>
+      <img src="Imagenes/chal1.jpg" alt="Templo de Xochicalco" />
+      <img src="Imagenes/chal2.jpg" alt="Panorámica de Xochicalco" />
+      <p>Uno de los aspectos más destacados de la zona arqueológica chalcatzingo es su abundancia de esculturas y petroglifos. Estas obras de arte antiguo no solo son estéticamente notable, sino que también tienen un profundo significado cultural y religioso.</p>
+    
+    <section class="mapa-lugar">
+  <div class="botones">
+    <a href="https://www.bing.com/maps?&ty=18&q=Zona%20Arqueol%C3%B3gica%20Chalcatzingo%2C%20Chalcatzingo%2CJantetelco%2CMorelos%2C%20Chalcatzingo%2C%20Morelos%2C%20M%C3%A9xico&ss=ypid.YN9001x2291211954497248625&mb=18.683051~-98.776274~18.669899~-98.765416&description=Chalcatzingo%2CJantetelco%2CMorelos%2C%2062975%20Chalcatzingo%2C%20Morelos&cardbg=%23219AB6&dt=1752440400000&tt=Zona%20Arqueol%C3%B3gica%20Chalcatzingo&tsts1=%2526ty%253D18%2526q%253DZona%252520Arqueol%2525C3%2525B3gica%252520Chalcatzingo%25252C%252520Chalcatzingo%25252CJantetelco%25252CMorelos%25252C%252520Chalcatzingo%25252C%252520Morelos%25252C%252520M%2525C3%2525A9xico%2526ss%253Dypid.YN9001x2291211954497248625%2526mb%253D18.683051~-98.776274~18.669899~-98.765416%2526description%253DChalcatzingo%25252CJantetelco%25252CMorelos%25252C%25252062975%252520Chalcatzingo%25252C%252520Morelos%2526cardbg%253D%252523219AB6%2526dt%253D1752440400000&tstt1=Zona%20Arqueol%C3%B3gica%20Chalcatzingo&cp=18.676475~-98.781316&lvl=16&pi=0&ftst=1&ftics=True&v=2&sV=2&form=S00027" target="_blank" class="boton">Ubicación</a>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+  
+
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if(event.target === modal){
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
