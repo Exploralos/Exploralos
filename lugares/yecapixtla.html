@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yecapixtla - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" />
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+   
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Yecapixtla</h2>
+
+    <!-- Imagen del lugar -->
+    <div class="imagen-lugar">
+      <img src="../Imagenes/ycc.jpg" alt="Centro histórico de Yecapixtla, Morelos" />
+    </div>
+
+    <!-- Información -->
+    <section class="info-lugar">
+      <p>
+        Yecapixtla, es un municipio lleno de historia, tradición y sabor ubicado al oriente del estado de Morelos. Su nombre proviene del náhuatl "Yecapichtlan", que significa "Lugar de los trabajadores o artesanos".
+      </p>
+      <p>
+        Uno de sus principales atractivos turísticos es el Ex Convento de San Juan Bautista, una joya del siglo XVI declarada Patrimonio de la Humanidad por la UNESCO. Su arquitectura conserva murales, claustros y una imponente iglesia que reflejan la influencia del arte religioso colonial.
+      </p>
+
+      <!-- Carrusel -->
+      <div class="slide fade">
+        <img src="../Imagenes/yc2.jpg" alt="Cecina en Yecapixtla">
+      </div>
+      <div class="slide fade">
+        <img src="../Imagenes/yc3.jpg" alt="Exconvento de San Juan Bautista">
+      </div>
+
+      <p>
+        Además de su cecina famosa a nivel nacional, Yecapixtla ofrece una experiencia culinaria con platillos típicos como el mole rojo, tamales, barbacoa, tacos acorazados y una gran variedad de antojitos mexicanos que pueden disfrutarse en su mercado tradicional.
+      </p>
+      <p>
+        Entre sus festividades más importantes está la Feria de la Cecina, celebrada en octubre, que reúne a miles de visitantes con música, danza, exposiciones, gastronomía y artesanías locales. También destaca la fiesta patronal en honor a San Juan Bautista el 24 de junio, con procesiones, misas, danzas y fuegos pirotécnicos.
+      </p>
+      <p>
+        El municipio también es puerta de entrada a rutas ecoturísticas como senderismo hacia la Sierra de Monte Negro y otras áreas naturales, ideales para quienes disfrutan del aire libre y las tradiciones rurales.
+      </p>
+    </section>
+
+    <!-- Mapa de ubicación -->
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe
+        src="https://www.google.com/maps?q=yecapixtla,morelos&output=embed"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

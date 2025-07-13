@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tepoztlán - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" />
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+   
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Tepoztlán</h2>
+
+    <div class="imagen-lugar">
+      <img src="../Imagenes/tepozteo.jpg" alt="Vista del Tepozteco en Tepoztlán" />
+    </div>
+
+    <section class="info-lugar">
+      <p>
+        Tepoztlán es un Pueblo Mágico ubicado al norte del estado de Morelos, en las faldas del Cerro del Tepozteco.
+        Este encantador destino es conocido por su ambiente bohemio, su misticismo y su fuerte conexión con la espiritualidad y la naturaleza.
+        Su nombre proviene del náhuatl <strong>“Tepoz-tlan”</strong>, que puede traducirse como “lugar del hacha de cobre”.
+      </p>
+
+      <h3>¿Qué hacer en Tepoztlán?</h3>
+      <ul>
+        <li><strong>Subir al Cerro del Tepozteco:</strong> Una caminata desafiante pero gratificante. En la cima se encuentra una zona arqueológica con una pirámide dedicada al dios del pulque, Tepoztecatl.</li>
+        <li><strong>Visitar el Ex Convento de la Natividad:</strong> Construido en el siglo XVI por los dominicos, es Patrimonio de la Humanidad por la UNESCO.</li>
+        <li><strong>Pasear por el mercado artesanal:</strong> Aquí se pueden encontrar desde textiles bordados hasta inciensos, figuras de barro, cuarzos y productos herbolarios.</li>
+        <li><strong>Relajarte en un temazcal:</strong> Tepoztlán es famoso por sus rituales de purificación con vapor y hierbas medicinales.</li>
+      </ul>
+
+      <h3>Gastronomía local</h3>
+
+       <div class="carrusel-auto">
+  <div class="slide fade">
+    <img src="../Imagenes/tepoz1.jpg" alt="Imagen 1 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/tepoz2.jpg" alt="Imagen 2 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/tepoz3.jpg" alt="Imagen 3 de Cuernavaca">
+  </div>
+</div>
+
+      <p>
+        No puedes irte sin probar las <strong>nieves artesanales</strong> de sabores exóticos como pétalo de rosa, mole o aguacate.
+        También son típicos los itacates, los tlacoyos, y las quesadillas de maíz azul rellenas de flor de calabaza o huitlacoche.
+      </p>
+
+      <h3>Festividades destacadas</h3>
+      <ul>
+        <li><strong>Fiesta del Tepozteco (8 de septiembre):</strong> Celebra la conversión de los pueblos indígenas al cristianismo. Incluye danzas, procesiones y actividades tradicionales.</li>
+        <li><strong>Semana Santa:</strong> Se realizan representaciones religiosas en el Ex Convento y en las calles del pueblo.</li>
+        <li><strong>Feria del Maíz:</strong> Con exposiciones de productos locales, concursos y muestras gastronómicas.</li>
+      </ul>
+
+      <h3>Turismo alternativo</h3>
+      <p>
+        Muchos visitantes acuden a Tepoztlán por su energía especial. Es común encontrar retiros de meditación, yoga, sanación con cuarzos, y ceremonias ancestrales.
+        También hay muchos espacios para el <em>glamping</em> o eco-hospedajes rodeados de naturaleza.
+      </p>
+    </section>
+
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe
+        src="https://www.google.com/maps?q=tepoztlán&output=embed"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

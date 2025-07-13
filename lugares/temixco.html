@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temixco - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" />
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+     
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Temixco</h2>
+
+    <div class="imagen-lugar">
+      <img src="../Imagenes/temixco3.jpg" alt="Vista panorámica de Temixco" />
+    </div>
+
+    <section class="info-lugar">
+      <p>
+        Temixco es un municipio ubicado al sur del estado de Morelos, conocido por su clima cálido y su cercanía a Cuernavaca. Su nombre proviene del náhuatl “Temixco”, que significa “lugar donde se hacen las ollas”.
+      </p>
+
+      <p>
+        Destaca por sus balnearios y parques acuáticos como <strong>Las Estacas</strong>, un parque natural con ríos cristalinos y actividades al aire libre, ideal para la convivencia familiar y el ecoturismo. También cuenta con sitios arqueológicos como <strong>Xochicalco</strong> en sus cercanías, un importante vestigio prehispánico declarado Patrimonio Mundial por la UNESCO.
+      </p>
+
+           <div class="carrusel-auto">
+  <div class="slide fade">
+    <img src="../Imagenes/temixco1.jpeg" alt="Imagen 1 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/temixco2.webp" alt="Imagen 2 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/temixco4.jpg" alt="Imagen 3 de Cuernavaca">
+  </div>
+</div>
+
+      <p>
+        Temixco posee una rica cultura tradicional que se refleja en sus festividades, artesanías y gastronomía, donde sobresalen platillos como el mole, las cecinas y las nieves artesanales. Las ferias locales suelen estar acompañadas de música, danzas y eventos culturales que muestran el espíritu de su gente.
+      </p>
+
+      <p>
+        Es un destino ideal para quienes buscan combinar la naturaleza, historia y cultura en un ambiente cercano a la capital del estado.
+      </p>
+    </section>
+
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe
+        src="https://www.google.com/maps?q=temixco,morelos&output=embed"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

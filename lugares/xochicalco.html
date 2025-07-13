@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xochicalco - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" />
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+      
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Xochicalco</h2>
+
+     <div class="slide fade">
+    <img src="../Imagenes/xochi parroquia.jpg" alt="Imagen 1 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/xochi2.jpg" alt="Imagen 2 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/xochi3.jpg" alt="Imagen 3 de Cuernavaca">
+  </div>
+</div>
+
+    <section class="info-lugar">
+      <p>
+        Xochicalco es una antigua ciudad prehispánica situada en el estado de Morelos. Declarada Patrimonio de la Humanidad por la UNESCO en 1999, es uno de los sitios arqueológicos más importantes de México debido a su arquitectura monumental, su trazo urbano y su relevancia astronómica.
+      </p>
+      <p>
+        Se estima que alcanzó su apogeo entre los años 700 y 900 d.C., durante el periodo Epiclásico, tras la caída de Teotihuacán. Fue un centro multicultural donde convergieron influencias mexicas, olmecas, totonacas y mayas.
+      </p>
+    </section>
+
+    <section class="info-lugar">
+      <h3>¿Qué ver en Xochicalco?</h3>
+      <ul>
+        <li><strong>Templo de la Serpiente Emplumada:</strong> Uno de los principales atractivos por sus relieves de gran detalle.</li>
+        <li><strong>Observatorio subterráneo:</strong> Cavidad que servía para observaciones astronómicas, especialmente del sol en los solsticios.</li>
+        <li><strong>Plataformas y pirámides:</strong> Distribuidas en terrazas artificiales adaptadas al terreno montañoso.</li>
+        <li><strong>Cancha de juego de pelota:</strong> Indicador del vínculo entre religión y deporte ritual mesoamericano.</li>
+      </ul>
+    </section>
+
+    <section class="info-lugar">
+      <h3>Recomendaciones</h3>
+      <ul>
+        <li>Llevar ropa cómoda y calzado antiderrapante: el sitio es extenso y con zonas inclinadas.</li>
+        <li>Visitar el museo de sitio de Xochicalco antes del recorrido, para entender mejor el contexto histórico.</li>
+        <li>Evitar las horas de mayor sol y llevar agua.</li>
+      </ul>
+    </section>
+
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe 
+        src="https://www.google.com/maps?q=xochicalco,morelos&output=embed"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

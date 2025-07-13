@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zacatepec - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" />
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+      
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Zacatepec</h2>
+
+    <div class="imagen-lugar">
+      <img src="../Imagenes/zaca.jpg" alt="Vista panorámica de Zacatepec" />
+    </div>
+
+    <section class="info-lugar">
+      <p>
+        Zacatepec es un municipio del estado de Morelos reconocido por su importante producción cañera y su tradición agrícola. Su clima cálido y húmedo favorece el cultivo de caña de azúcar, que ha sido el motor económico de la región durante décadas.
+      </p>
+      <p>
+        Además de su riqueza agrícola, Zacatepec es conocido por sus festivales tradicionales, como la Feria de la Caña, donde se celebra la historia y cultura del municipio con música, danza, gastronomía y artesanías típicas.
+      </p>
+
+                <div class="carrusel-auto">
+  <div class="slide fade">
+    <img src="../Imagenes/zaca1.jpg" alt="Imagen 1 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/zaca2.jpg" alt="Imagen 2 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/zaca3.jpg" alt="Imagen 3 de Cuernavaca">
+  </div>
+</div>
+
+      <p>
+        El municipio también cuenta con hermosos parajes naturales y espacios para el ecoturismo, como ríos y balnearios que atraen a visitantes que buscan relajarse y disfrutar de la naturaleza en un entorno tranquilo.
+      </p>
+      <p>
+        Su gente es cálida y orgullosa de sus raíces, lo que se refleja en sus celebraciones y en la conservación de sus tradiciones culturales y religiosas.
+      </p>
+    </section>
+
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe
+        src="https://www.google.com/maps?q=zacatepec,morelos&output=embed"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

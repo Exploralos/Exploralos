@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pueblos Mágicos - Exploralos</title>
+  <link rel="stylesheet" href="../css/estilolugares.css" />
+  <style>
+    /* Igual que en arqueológicas: */
+    .pueblo-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .pueblo {
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .pueblo h4 {
+      margin-top: 0;
+      color: #5fa631; /* Verde diferente para distinguir */
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .boton {
+      background-color: #fab417;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #c49772;
+    }
+
+    @media (min-width: 768px) {
+      .pueblo-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="barra-navegacion">
+    <div class="logo-container">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+      
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <main class="contenido-lugar">
+    <section>
+      <h2>Pueblos Mágicos de Morelos</h2>
+      <p>
+        Los Pueblos Mágicos de Morelos son destinos llenos de tradición, cultura y belleza natural. 
+        <br>Cada uno ofrece una experiencia única para turistas que buscan descubrir el México auténtico.
+      </p>
+    </section>
+
+    <section class="pueblo-container">
+      <div class="pueblo">
+        <h4>Tepoztlán</h4>
+        <p>
+          Reconocido por su ambiente místico y espiritual, Tepoztlán cautiva con su mercado tradicional, su imponente cerro del Tepozteco y su vibrante vida cultural. Perfecto para senderismo, festivales y gastronomía local.
+        </p> 
+      <img src="../Imagenes/tEPOZ.png" alt="img" class="img" />
+        <div class="botones">
+    
+         <br>
+          <a href="https://maps.google.com/?q=Tepoztlán" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="pueblo">
+        <h4>Tlayacpan</h4>
+        <p>
+          Este lugar se caracteriza por sus majestuosos cerros desde los cuales puedes apreciar vistas panorámicas espectaculares, pero sobre todo, por su valor histórico arraigado a la cultura religiosa del siglo XVI
+        </p>
+        <img src="../Imagenes/tlayacapan  convento.png" alt="img" class="img" />
+        <br>
+        <div class="botones">
+        
+          <a href="https://maps.google.com/?q=tlayacapan" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="pueblo">
+        <h4>Xochitepec</h4>
+        <p>
+          Sus principales atractivos son lugares históricos, entre los cuales destaca la Iglesia San Juan Evangelista, un inmueble que data del siglo XVII y fue fundado por los Franciscanos en el siglo XVl. Actualmente es el Centro Cultural Xochitepequense y oficinas del gobierno municipal. En ella se han filmado películas.
+        </p>
+        <img src="../Imagenes/xochi parroquia.jpg" alt="img" class="img" />
+        <div class="botones">
+         
+          <a href="https://maps.google.com/?q=xochitepec" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+       <div class="pueblo">
+        <h4>Tlaltizapán de Zapata</h4>
+        <p>
+          Nombrado Pueblo Mágico en el año 2023, Tlaltizapán se posiciona y repunta con destino predilecto para quienes gustan de la historia, turismo cultural, ecoturismo y de explorar rincones llenos de magia y tradición.
+        </p>
+        <img src="../Imagenes/tlaltizapan.avif" alt="img" class="img" />
+        <div class="botones">
+         
+          <a href="https://maps.google.com/?q=tlaltizapan" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding:1rem; background-color:#eee; color:#333;">
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>
+

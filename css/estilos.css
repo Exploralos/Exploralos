@@ -1,0 +1,76 @@
+/* estilos con animaciones */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Body y tipografía */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Header y navegación */
+header {
+  /* ... */
+  display: flex;
+  flex-direction: row; /* o simplemente elimina esta línea, porque por defecto flex es fila */
+  align-items: center; /* está bien para centrar verticalmente */
+  justify-content: space-between; /* para separar logo y nav */
+  /* ... */
+}
+
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav 
+  displ
+
+
+.info-oculta {
+  display: none;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.info-activa {
+  display: block;
+}
+
+.logo {
+  width: 200px;   
+  height: auto;   
+}
+
+
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* opcional para limitar ancho */
+}
+
+
+
+
+

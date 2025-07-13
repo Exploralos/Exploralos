@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zonas Arqueológicas - Exploralos</title>
+  <link rel="stylesheet" href="../css/estilolugares.css" />
+  <style>
+    .zona-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .zona {
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .zona h4 {
+      margin-top: 0;
+      color: #2e6043;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .boton {
+      background-color: #35b7a9;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #2e6043;
+    }
+
+    @media (min-width: 768px) {
+      .zona-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+  <div class="logo-container">
+    <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+    <h1>Exploralos</h1>
+  </div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+    <a href="../Lugares.html">Lugares</a>
+    <a href="../atracciones.html">Atracciones</a>
+  </nav>
+</header>
+
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <section>
+      <h2>Zonas Arqueológicas en Morelos</h2>
+      <p>
+        Descubre el legado prehispánico de Morelos a través de sus zonas arqueológicas, ideales para conocer la historia, explorar ruinas ancestrales y admirar el paisaje.
+      </p>
+    </section>
+
+    <section class="zona-container">
+      <div class="zona">
+        <h4>Xochicalco</h4>
+        <p>
+          Ubicada en Miacatlán, es la zona más impresionante de Morelos. Con vestigios de influencia teotihuacana y zapoteca, se distingue por su observatorio, murales y la Pirámide de Quetzalcóatl.
+</p>
+ <img src="../Imagenes/xochicalco.png" alt="" class="img" />
+        <div class="botones">
+        
+          <a href="https://maps.google.com/?q=Zona+Arqueológica+Xochicalco" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="zona">
+        <h4>Teopanzolco</h4>
+        <p>
+          Situada en Cuernavaca, esta pequeña pero significativa zona arqueológica permite entender la cultura tlahuica. Tiene una pirámide doble y vistas modernas de la ciudad.
+        </p>
+        <img src="../Imagenes/Teopanzolco1.jpg" alt="" class="img" />
+        <div class="botones">
+          
+          <a href="https://maps.google.com/?q=Zona+Arqueológica+Teopanzolco" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="zona">
+        <h4>Coatetelco</h4>
+        <p>
+          A orillas de una laguna, Coatetelco ofrece una experiencia única. Sus restos reflejan la influencia de Xochicalco y su entorno lo hace perfecto para un paseo tranquilo.
+        </p>
+        <img src="../Imagenes/coattlco.jpg" alt="" class="img" />
+        <br>
+        <div class="botones">
+        
+          <a href="https://maps.google.com/?q=Zona+Arqueológica+Coatetelco" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="zona">
+        <h4>Chalcatzingo</h4>
+        <p>
+
+Se trata de uno de los principales asentamientos que adoptaron aspectos de la cultura Olmeca y que se identifican fácilmente en la producción artística y arquitectónica.
+        </p>
+        <img src="../Imagenes/chalcanzingo.jpg" alt="" class="img" />
+        <div class="botones">
+        
+          <a href="https://maps.google.com/?q=Chalcatzingo" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+
+   
+  </main>
+
+  <footer style="text-align:center; padding:1rem; background-color:#eee; color:#333;">
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>
+

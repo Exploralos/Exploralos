@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emiliano Zapata - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" /> 
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+      
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Emiliano Zapata</h2>
+
+    <div class="imagen-lugar">
+      <img src="../Imagenes/Imagen_panorámicazapata.jpg" alt="Vista panorámica de Emiliano Zapata, Morelos" />
+    </div>
+
+    <section class="info-lugar">
+      <p>
+        Emiliano Zapata es un municipio ubicado en el estado de Morelos, conocido por su desarrollo agrícola y su creciente industria local.
+        Lleva el nombre en honor al famoso líder revolucionario mexicano, Emiliano Zapata Salazar, símbolo de la lucha social en México.
+      </p>
+      <p>
+        El municipio combina tradiciones rurales con avances modernos, contando con espacios culturales, plazas y parques que reflejan la identidad de su gente.
+      </p>
+      <div class="carrusel-auto">
+  <div class="slide fade">
+    <img src="../Imagenes/zapatatuneles.jpg" alt="Imagen 1 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/emiliano-zapata-700x454-1.jpg" alt="Imagen 2 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/festivalzapata.webp" alt="Imagen 3 de Cuernavaca">
+  </div>
+</div>
+      <p>
+        Entre sus atractivos se encuentran sus festividades tradicionales, mercados donde se puede disfrutar de la gastronomía típica y zonas naturales ideales para el turismo ecológico y actividades al aire libre.
+      </p>
+      <p>
+        La agricultura sigue siendo una base importante para la economía local, con producción de caña de azúcar, maíz y otros cultivos regionales.
+      </p>
+      <p>
+        Emiliano Zapata es un lugar que invita a conocer su historia, cultura y el día a día de su comunidad, ofreciendo una experiencia auténtica dentro del estado de Morelos.
+      </p>
+    </section>
+
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe
+        src="https://www.google.com/maps?q=emiliano+zapata,morelos&output=embed"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

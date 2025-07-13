@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exploralos - Lugares</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #6a1b9a; /* morado fuerte */
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #ffe082; /* amarillo suave */
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #ffeb3b;
+    }
+
+    main {
+      padding: 2rem;
+    }
+    
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #6a1b9a;
+    }
+
+    .lugares-lista {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .lugar-card {
+      background-color: #fff;
+      width: 290px;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lugar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(106, 27, 154, 0.3);
+    }
+
+    .lugar-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .lugar-card h3 {
+      margin: 1rem 1rem 0.5rem;
+      color: #512da8;
+    }
+
+    .lugar-card p {
+      margin: 0 1rem 1.5rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #ede7f6;
+      color: #333;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .lugar-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" /> 
+    <h1>Exploralos</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+     
+      <a href="atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Lugares de Morelos</h2>
+
+    <div class="lugares-lista">
+
+      <!-- Solo muestro algunos ejemplos, tú puedes dejar todos los <a> que ya tenías -->
+
+      <a href="lugares/Pueblosmagicos.html" class="lugar-card">
+        <img src="Imagenes/tEPOZ.png" alt="Pueblos mágicos" />
+        <h3>Pueblos mágicos</h3>
+        <p>Descubre la magia viva de México en cada rincón. Tradiciones, colores y encanto que te enamoran desde el primer paso.</p>
+      </a>
+
+      <a href="lugares/arqueologicas.html" class="lugar-card">
+        <img src="Imagenes/arq.jpg" alt="Zona arqueológica" />
+        <h3>Zonas arqueológicas</h3>
+        <p>Viaja al pasado y camina entre las huellas de antiguas civilizaciones. La historia te espera bajo cada piedra.</p>
+      </a>
+
+      <a href="lugares/Balnearios.html" class="lugar-card">
+        <img src="Imagenes/estacas.jpg" alt="Balnearios" />
+        <h3>Balnearios y parques acuáticos</h3>
+        <p>Sumérgete en la frescura natural de Morelos: aguas cristalinas, paisajes únicos y momentos inolvidables.</p>
+      </a>
+
+
+    <br>
+    <div class="lugares-lista">
+      <a href="lugares/tepoztlan.html" class="lugar-card">
+        <img src="Imagenes/tEPOZ.png" alt="Tepoztlán" />
+        <h3>Tepoztlán</h3>
+        <p>Pueblo mágico con historia, naturaleza y tradición.</p>
+      </a>
+      <a href="lugares/cuernavaca.html" class="lugar-card">
+        <img src="Imagenes/cuerna.png" alt="Cuernavaca" />
+        <h3>Cuernavaca</h3>
+        <p>Conocida como la ciudad de la eterna primavera.</p>
+      </a>
+       <a href="lugares/xochicalco.html" class="lugar-card">
+        <img src="Imagenes/xochicalco.png" alt="Xochicalco" />
+        <h3>Xochicalco</h3>
+        <p>Esta zona arqueológica fue un centro cultural y político importante durante el periodo Epiclásico.</p>
+      </a>
+
+      <a href="lugares/tlayacapan.html" class="lugar-card">
+        <img src="Imagenes/tlayacapan  convento.png" alt="Tlayacapan" />
+        <h3>Tlayacapan</h3>
+        <p>Pueblo Mágico, donde podrás disfruta de belleza naturales y artesanías .</p>
+      </a>
+
+      <a href="lugares/teques.html" class="lugar-card">
+        <img src="Imagenes/lago.png" alt="Tequesquitengo" />
+        <h3>Tequesquitengo</h3>
+        <p>Un lugar ideal para alejarte del estrés de la ciudad y adentrarte en un paraíso natural color azul.
+</p>
+      </a>
+     
+
+      <a href="lugares/tlalquitenango.html" class="lugar-card">
+        <img src="Imagenes/tlaqui.webp" alt="Tlalquitenango" />
+        <h3>Tlalquitenango</h3>
+        <p>Descubre en Tlaquiltenango muros milenarios, balnearios legendarios y raíces profundas que te conectan con la historia.</p>
+      </a> 
+
+      <a href="lugares/tlaltizapan.html" class="lugar-card">
+        <img src="Imagenes/Tlaltizapan-de-Zapata-700x525.jpeg" alt="Tlaltizapán" />
+        <h3>Tlaltizapán</h3>
+        <p>Tlaltizapán te espera con aguas cristalinas, historia viva y tradiciones que laten al ritmo del corazón del Sur.</p>
+
+        <a href="lugares/temixco.html" class="lugar-card">
+          <img src="Imagenes/temixco.webp" alt="Temixco" />
+          <h3>Temixco</h3>
+          <p>Explora ruinas milenarias, refréscate en antiguos azudales y vive la emoción bajo el sol morelense.</p>
+        </a> 
+
+             <a href="lugares/zacatepec.html" class="lugar-card">
+          <img src="Imagenes/zaca.jpg" alt="Zacatepec" />
+          <h3>Zacatepec</h3>
+          <p>relájate en balnearios históricos, explora senderos milenarios y vibra con el fútbol en su emblemático estadio.</p>
+
+               <a href="lugares/cuautla.html" class="lugar-card">
+          <img src="Imagenes/cuautla.png" alt="cuautla" />
+          <h3>Cuautla</h3>
+          <p>Conocida como la Heroica e Histórica Ciudad de Cuautla, su nombre nahua significa “lugar de las águilas”.</p>
+        </a> 
+
+        <a href="lugares/jonacatepect.html" class="lugar-card">
+          <img src="Imagenes/jonacatepec.jpg" alt="Jonacatepec" />
+          <h3>Jonacatepec</h3>
+          <p>Su riqueza histórica se centra en el Ex‑Convento de San Agustín y la zona arqueológica de Las Pilas.</p>
+        </a> 
+
+     
+                <a href="lugares/zapata.html" class="lugar-card">
+          <img src="Imagenes/zapatatuneles.jpg" alt="Zapata" />
+          <h3>Emiliano Zapata</h3>
+          <p>La historia de la Revolución cobra vida entre cerámica, tradiciones y la esencia del sur de Morelos.</p>
+        </a> 
+
+               <a href="lugares/jojutla.html" class="lugar-card">
+          <img src="Imagenes/jojutla.jpg" alt="jojutla" />
+          <h3>Jojutla</h3>
+          <p> Un destino turístico en el sur de Morelos que combina naturaleza, historia y cultura.</p>
+        </a> 
+
+               <a href="lugares/yecapixtla.html" class="lugar-card">
+          <img src="Imagenes/yaute.png" alt="Itzamatitlán" />
+          <h3>Yecapixtla</h3>
+          <p>Yecapixtla, es un municipio lleno de historia, tradición y sabor. </p>
+        </a> 
+
+               <a href="lugares/huitzilac.html" class="lugar-card">
+          <img src="Imagenes/sempoala.jpg" alt="huitzilac" />
+          <h3>Huitzilac</h3>
+          <p>Disfruta del aire fresco y el verde de sus paisajes.</p>
+        </a> 
+               <a href="lugares/tetela.html" class="lugar-card">
+          <img src="Imagenes/morelos-teteladelvolcan.jpg" alt="Tetela del volcan" />
+          <h3>Tetela del volcán</h3>
+          <p>Es un lugar con una rica historia y cultura que se remonta a la época prehispánica.</p>
+        </a> 
+
+               <a href="lugares/coatetelco.html" class="lugar-card">
+          <img src="Imagenes/lagunacoatetelco.png" alt="coatetelco" />
+          <h3>Coatetelco</h3>
+          <p>Pueblo indigena lleno de historia y tradición.</p>
+        </a> 
+               <a href="lugares/hueyapan.html" class="lugar-card">
+          <img src="Imagenes/dongoyo.jpg" alt="hueyapan" />
+          <h3>Hueyapan</h3>
+          <p>es un destino que preserva sus raíces y promueve el bienestar comunitario a través de experiencias auténticas.
+
+</p>
+        </a> 
+               <a href="lugares/jiutepec.html" class="lugar-card">
+          <img src="Imagenes/jiute.webp" alt="Jiutepec" />
+          <h3>Jiutepec</h3>
+          <p>Camina por plazas llenas de vida y tradiciones: sabores, historia y la calidez morelense en cada esquina.</p>
+        </a> 
+
+           <a href="lugares/Huautla.html" class="lugar-card">
+          <img src="Imagenes/huautla.jpg" alt="Huautla" />
+          <h3>Huautla</h3>
+          <p>Este destino reconocible como Pueblo Mágico desde 2015 ofrece una mezcla única de naturaleza y cultura local</p>
+        </a> 
+      </a>  
+    </div>
+  </main>
+  <footer style="text-align:center; padding:1rem; background-color:#eee; color:#333;">
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>
+  </main>
+</body>

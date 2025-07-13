@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tlayacapan - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" />
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+     
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Tlayacapan</h2>
+
+    <div class="imagen-lugar">
+      <img src="../Imagenes/tlayacapan1.jpg" alt="Vista del exconvento de Tlayacapan" />
+    </div>
+
+    <section class="info-lugar">
+      <p>
+        Tlayacapan es un Pueblo Mágico ubicado en el noreste del estado de Morelos, enclavado en las faldas del Parque Nacional El Tepozteco.
+        Este municipio es conocido por su rica tradición artesanal, sus danzas tradicionales como la de los chinelos y su historia ligada a los frailes agustinos.
+      </p>
+      <p>
+        El exconvento de San Juan Bautista, construido en el siglo XVI, forma parte de la Ruta de los Conventos, declarada Patrimonio Mundial por la UNESCO. 
+        Tlayacapan es también un punto importante en la elaboración de cerámica tradicional de barro, reconocida por su autenticidad y diseño.
+      </p>
+    </section>
+
+          <div class="carrusel-auto">
+  <div class="slide fade">
+    <img src="../Imagenes/tlayacapan2.gif" alt="Imagen 1 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/tlayacapan3.jpg" alt="Imagen 2 de Cuernavaca">
+  </div>
+  <div class="slide fade">
+    <img src="../Imagenes/tlayacapan 4.jpg" alt="Imagen 3 de Cuernavaca">
+  </div>
+</div>
+
+    <section class="info-lugar">
+      <h3>Atractivos destacados:</h3>
+      <ul>
+        <li><strong>Exconvento de San Juan Bautista:</strong> Impresionante construcción del siglo XVI con pinturas murales y momias en su interior.</li>
+        <li><strong>Capillas de barrio:</strong> Hay más de 20 capillas distribuidas en diferentes barrios, todas con historia y estilo propio.</li>
+        <li><strong>Talleres de cerámica:</strong> Espacios donde puedes observar y participar en la elaboración de piezas de barro.</li>
+        <li><strong>Carnaval de Tlayacapan:</strong> Uno de los más tradicionales del estado, con la icónica danza de los chinelos.</li>
+      </ul>
+    </section>
+
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe src="https://www.google.com/maps?q=tlayacapan,morelos&output=embed"
+              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

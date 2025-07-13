@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tetela del Volcán - Exploralos</title>
+  <link rel="stylesheet" href="../css/municipio.css" />
+</head>
+
+<script>
+  let index = 0;
+  function mostrarSlides() {
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    index++;
+    if (index > slides.length) index = 1;
+    slides[index - 1].style.display = "block";
+    setTimeout(mostrarSlides, 4000); // Cambia cada 4 segundos
+  }
+  window.addEventListener("load", mostrarSlides);
+</script>
+
+
+<body>
+  <!-- Barra de navegación -->
+  <header class="barra-navegacion">
+    <div class="logo-titulo">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+      
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido-lugar">
+    <h2>Tetela del Volcán</h2>
+
+    <!-- Imagen del lugar -->
+    <div class="imagen-lugar">
+      <img src="../Imagenes/morelos-teteladelvolcan.jpg" alt="Paisaje natural en Tetela del Volcán" />
+    </div>
+
+    <!-- Información -->
+    <section class="info-lugar">
+      <p>
+        Tetela del Volcán es un municipio ubicado en la zona norte del estado de Morelos, rodeado de un paisaje montañoso espectacular y abundante vegetación.
+      </p>
+      <p>
+        Este pueblo destaca por su riqueza natural y cultural, siendo un destino ideal para los amantes del ecoturismo, el senderismo y la observación de flora y fauna.
+      </p>
+
+      
+       <div class="slide fade">
+        <img src="../Imagenes/tt1.jpg" alt="Cecina en Yecapixtla">
+      </div>
+      <div class="slide fade">
+        <img src="../Imagenes/tt3.webp" alt="Exconvento de San Juan Bautista">
+      </div>
+
+      <p>
+        Entre sus atractivos está la cascada de Los Sabinos, un lugar ideal para el descanso y la recreación, así como el Santuario del Señor de Chalma, sitio de gran devoción y tradición religiosa.
+      </p>
+      <p>
+        La gastronomía local ofrece platillos típicos morelenses preparados con ingredientes frescos de la región. Además, el pueblo conserva sus tradiciones y festividades, como la fiesta patronal en honor a San Mateo, celebrada con danzas, música y rituales ancestrales.
+      </p>
+    </section>
+
+    <!-- Mapa de ubicación -->
+    <section class="mapa-lugar">
+      <h3>Ubicación:</h3>
+      <iframe
+        src="https://www.google.com/maps?q=tetela+del+volcán,morelos&output=embed"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

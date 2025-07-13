@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exploralos - Inicio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf2;
+      color: #333;
+    }
+
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .barra {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #ffe082;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #ffeb3b;
+    }
+
+    .presentacion {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2rem;
+      background-color: #f3e5f5;
+    }
+
+    .presentacion .texto {
+      flex: 1 1 350px;
+    }
+
+    .presentacion h2 {
+      color: #6a1b9a;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .presentacion p {
+      text-align: justify;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .mapa {
+      width: 400px;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #6a1b9a;
+    }
+
+    .lugares-vista-previa {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .lugar-card {
+      display: block;
+      width: 290px;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .lugar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(106, 27, 154, 0.3);
+    }
+
+    .lugar-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .lugar-card h3 {
+      margin: 1rem 1rem 0.5rem;
+      color: #512da8;
+    }
+
+    .lugar-card p {
+      margin: 0 1rem 1.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #ede7f6;
+      color: #333;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .presentacion {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .barra {
+        align-items: center;
+      }
+
+      .mapa {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .lugar-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" /> 
+    <h1>Exploralos</h1>
+    <nav>
+      <a href="Lugares.html">Lugares</a>
+      <a href="atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <section class="presentacion">
+    <div class="texto">
+      <h2>Bienvenidos a Exploralos</h2>
+      <p>
+        Tu guía para descubrir los lugares más increíbles de Morelos.<br><br>
+        Morelos ofrece experiencias para toda la familia. En EXPLORALOS te invitamos a conocer la belleza mágica del estado: un destino turístico ideal tanto para los amantes de actividades extremas, quienes aprecian la cultura e historia, como para quienes buscan relajarse entre paisajes naturales.
+      </p>
+    </div>
+    <img src="Imagenes/mapa.png" alt="Mapa de Morelos" class="mapa" />
+  </section>
+
+  <main>
+    <h2>Lugares destacados</h2>
+    <div class="lugares-vista-previa">
+      <a href="lugares/Pueblosmagicos.html" class="lugar-card">
+        <img src="Imagenes/tEPOZ.png" alt="Pueblos mágicos" />
+        <h3>Pueblos mágicos</h3>
+        <p>Descubre la magia viva de México en cada rincón. Tradiciones, colores y encanto que te enamoran desde el primer paso.</p>
+      </a>
+
+      <a href="lugares/arqueologicas.html" class="lugar-card">
+        <img src="Imagenes/arq.jpg" alt="Zonas arqueológicas" />
+        <h3>Zonas arqueológicas</h3>
+        <p>Viaja al pasado y camina entre las huellas de antiguas civilizaciones. La historia te espera bajo cada piedra.</p>
+      </a>
+
+      <a href="lugares/Balnearios.html" class="lugar-card">
+        <img src="Imagenes/estacas.jpg" alt="Balnearios" />
+        <h3>Balnearios y parques acuáticos</h3>
+        <p>Sumérgete en la frescura natural de Morelos: aguas cristalinas, paisajes únicos y momentos inolvidables.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
+

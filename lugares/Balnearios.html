@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balnearios y Parques Acuáticos - Exploralos</title>
+  <link rel="stylesheet" href="../css/estilolugares.css" />
+  <style>
+    .balneario-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .balneario {
+      background-color: #f0f8ff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .balneario h4 {
+      margin-top: 0;
+      color: #35b7a9;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .boton {
+      background-color: #5fa631;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #4a8a25;
+    }
+
+    @media (min-width: 768px) {
+      .balneario-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="barra-navegacion">
+    <div class="logo-container">
+      <img src="../Imagenes/loggoo.png" alt="Logo Exploralos" class="logo" />
+      <h1>Exploralos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../Lugares.html">Lugares</a>
+     
+      <a href="../atracciones.html">Atracciones</a>
+    </nav>
+  </header>
+
+  <main class="contenido-lugar">
+    <section>
+      <h2>Balnearios y Parques Acuáticos Naturales en Morelos</h2>
+      <p>
+        Morelos cuenta con una gran variedad de balnearios y parques acuáticos que ofrecen diversión, descanso y contacto con la naturaleza. Desde ríos cristalinos hasta parques con toboganes extremos, estos destinos son ideales para escapar del calor y disfrutar en familia o con amigos.
+      </p>
+    </section>
+
+    <section class="balneario-container">
+
+      <div class="balneario">
+        <h4>Las Estacas (Tlaltizapán)</h4>
+        <p>
+          Un paraíso natural con el nacimiento del río Yautepec. Ideal para snorkel, buceo, kayak y camping. Rodeado de vegetación, es perfecto para los amantes del ecoturismo.
+        </p>
+        <img src="../Imagenes/F2_10236.webp" alt="img" class="img" />
+        <div class="botones">
+          <a href="https://maps.google.com/?q=Las+Estacas,+Tlaltizapán" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="balneario">
+        <h4>Six Flags Hurricane Harbor (Oaxtepec)</h4>
+        <p>
+          El parque acuático más moderno del estado, con toboganes extremos, alberca de olas, zonas infantiles y atracciones tipo parque temático.
+        </p>
+        <img src="../Imagenes/sixflag.webp" alt="img" class="img" />
+        <div class="botones">
+          <a href="https://maps.google.com/?q=Six+Flags+Hurricane+Harbor+Oaxtepec" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="balneario">
+        <h4>Agua Hedionda (Cuautla)</h4>
+        <p>
+          Conocido por sus aguas sulfurosas con propiedades terapéuticas. Tiene albercas, áreas de picnic y una historia que se remonta a tiempos prehispánicos.
+        </p>
+         <img src="../Imagenes/image-1.jpg" alt="img" class="img" />
+        <div class="botones">
+          <a href="https://maps.google.com/?q=Agua+Hedionda,+Cuautla" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="balneario">
+        <h4>El Rollo (Tlaquiltenango)</h4>
+        <p>
+          Uno de los parques acuáticos más grandes de México. Cuenta con toboganes gigantes, río lento, albercas con olas y áreas de descanso.
+        </p>
+         <img src="../Imagenes/elrollo.webp" alt="img" class="imgtt" />
+        <div class="botones">
+       
+          <a href="https://maps.google.com/?q=El+Rollo,+Tlaquiltenango" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="balneario">
+        <h4>Los Manantiales (Tlaquiltenango)</h4>
+        <p>
+          Balneario natural rodeado de árboles y naturaleza. Sus aguas frescas provienen directamente de manantiales. Ambiente familiar y tranquilo.
+        </p>
+          <img src="../Imagenes/Los-manatiales-008-1024x767.webp" alt="img" class="img" />
+        <div class="botones">
+          <a href="https://maps.google.com/?q=Balneario+Los+Manantiales,+Tlaquiltenango" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="balneario">
+        <h4>Campamento ISSSTEHuixtla (Jojutla)</h4>
+        <p>
+          Ideal para descansar, nadar en aguas naturales y disfrutar de la tranquilidad. Tiene opción de hospedaje, asadores y actividades recreativas.
+        </p>
+        <img src="../Imagenes/paseopormexico_jojutla11.webp" alt="img" class="img" />
+        <div class="botones">
+          <a href="https://maps.google.com/?q=ISSSTEHuixtla,+Jojutla" target="_blank" class="boton">Cómo llegar</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding:1rem; background-color:#eee; color:#333;">
+    © 2025 Exploralos - Todos los derechos reservados
+  </footer>
+</body>
+</html>

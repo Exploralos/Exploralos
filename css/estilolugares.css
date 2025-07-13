@@ -1,0 +1,145 @@
+
+
+/* Barra de navegación */
+.barra-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4f0971; /* Verde oscuro o puedes cambiarlo */
+  padding: 1rem 2rem;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.barra-navegacion h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+}
+
+.barra-navegacion nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.barra-navegacion nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.barra-navegacion nav a:hover {
+  background-color: #35b7a9; /* Color de acento */
+}
+
+/* estilos con animaciones */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Body y tipografía */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Header y navegación */
+header {
+  /* ... */
+  display: flex;
+  flex-direction: row; /* o simplemente elimina esta línea, porque por defecto flex es fila */
+  align-items: center; /* está bien para centrar verticalmente */
+  justify-content: space-between; /* para separar logo y nav */
+  /* ... */
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav 
+  displ
+
+
+.info-oculta {
+  display: none;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.info-activa {
+  display: block;
+}
+
+.logo {
+  width: 100px;   
+  height: auto;   
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* opcional para limitar ancho */
+}
+
+.img {
+  width: 50%;
+  max-width: 500px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.imgt {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.imgtt {
+  width: 90%;
+  max-width: 300px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
