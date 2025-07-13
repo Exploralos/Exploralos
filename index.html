@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Exploralos - Inicio</title>
   <style>
-   * {
+  /* Reset y básicos */
+* {
   box-sizing: border-box;
 }
 
@@ -16,6 +17,7 @@ body {
   color: #333;
 }
 
+/* Header */
 header {
   background-color: #6a1b9a;
   color: white;
@@ -23,6 +25,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .logo {
@@ -31,21 +35,19 @@ header {
   border-radius: 50%;
 }
 
-.barra {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
 header h1 {
   margin: 0;
   font-size: 2rem;
+  flex-grow: 1;
+  text-align: center;
 }
 
 nav {
-  margin-top: 0.5rem;
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 200px;
 }
 
 nav a {
@@ -53,6 +55,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -60,6 +63,7 @@ nav a:hover {
   text-shadow: 0 0 5px #ffeb3b;
 }
 
+/* Presentación */
 .presentacion {
   display: flex;
   flex-wrap: wrap;
@@ -88,10 +92,12 @@ nav a:hover {
 
 .mapa {
   width: 400px;
+  max-width: 100%;
   height: auto;
   border-radius: 1rem;
 }
 
+/* Main y tarjetas */
 main {
   padding: 2rem;
 }
@@ -111,8 +117,6 @@ h2 {
 }
 
 .lugar-card {
-  display: block;
-  width: 290px;
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
@@ -120,6 +124,9 @@ h2 {
   color: inherit;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
 }
 
 .lugar-card:hover {
@@ -142,8 +149,10 @@ h2 {
   margin: 0 1rem 1.5rem;
   font-size: 0.95rem;
   color: #555;
+  flex-grow: 1;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -152,34 +161,51 @@ footer {
   margin-top: 3rem;
 }
 
-/* --- Media Queries para responsividad --- */
-
+/* Media Queries para móvil */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    justify-content: center;
+  }
+  
+  header h1 {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    order: 1;
   }
 
   nav {
+    order: 2;
+    width: 100%;
     justify-content: center;
-    margin-top: 1rem;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
-  .mapa {
-    width: 100%;
-    max-width: 320px;
+  .lugares-vista-previa {
+    flex-direction: column;
+    align-items: center;
   }
 
   .lugar-card {
     width: 90%;
   }
-}
 
-@media (min-width: 769px) {
-  .lugar-card {
-    width: 290px;
+  .presentacion {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentacion .texto {
+    flex: none;
+    width: 100%;
+  }
+
+  .mapa {
+    width: 100%;
+    max-width: 320px;
   }
 }
 
