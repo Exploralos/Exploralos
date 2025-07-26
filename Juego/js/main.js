@@ -11,7 +11,7 @@ var  FirstState = {
     preload: function(){
         //Aqui se precargan elementos caché (audio,imagenes,etc.)
 
-        juego.load.image('fondo' , 'img/cielo.jpg' );
+        juego.load.image('fondo' , 'img/Cielo.jpg' );
         juego.load.audio('roluki' , 'audio/audio.mp3')
         juego.load.spritesheet('button', 'img/botones.png', 193, 71);
          juego.load.image('fondo2' , 'img/polis.jpg' );
