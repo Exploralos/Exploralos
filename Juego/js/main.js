@@ -33,6 +33,8 @@ var  FirstState = {
           juego.load.spritesheet('gota','img/gota.png', 512,512);
           juego.load.image('apple' , 'img/manzana.png' );
           juego.load.image('moneda' , 'img/moneda.png' );
+        juego.load.image('taco' , 'img/taco.png' );
+
         juego.load.spritesheet('monst', 'img/monstruo.png', 256, 256); 
         juego.load.image('hola' , 'img/hola.png' );
 
@@ -170,6 +172,11 @@ juego.camera.follow(personaje);
         moneda2.scale.setTo(0.25);
         juego.physics.enable(moneda2);
 
+        
+        taco = juego.add.sprite(2760,420, 'taco');
+        taco.scale.setTo(0.18);
+        juego.physics.enable(taco);
+
         pasto2.body.immovable = true;
         pasto4.body.immovable = true;
         pasto6.body.immovable = true;
@@ -255,6 +262,8 @@ boton1 = juego.add.button(10, 10, 'salir' , salir, this, 0, 1, 2);
         juego.physics.arcade.collide(personaje,apple);
         juego.physics.arcade.collide(personaje,moneda);
         juego.physics.arcade.collide(personaje,moneda2);
+        juego.physics.arcade.collide(personaje,taco);
+
 
         juego.physics.arcade.collide(personaje,monster);
        
@@ -308,6 +317,10 @@ boton1 = juego.add.button(10, 10, 'salir' , salir, this, 0, 1, 2);
                     txthola.visible = true;
         } else {
             txthola.visible = false;
+        }
+        if(juego.physics.arcade.overlap(personaje,taco)){
+            taco.destroy();
+            juego.state.start('Victoria'); // Cambia al estado "Victoria"
         }
         
 if(vidas == 0){
@@ -409,8 +422,30 @@ var gameover = {
     }
 }
 
+var estadoVictoria = {
+preload: function(){ 
+        
+        juego.load.image('win' , 'img/ganaste.png' );
+        },
+    
+    create: function(){
+        win = juego.add.sprite(400, 200, 'win');
+        enter = juego.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+        text1 = juego.add.text(0, 0, "Presiona enter para reiniciar",{font: "bold 32px Arial", fill: "white", boundsAlignH: "center", boundsAlignV: "middle"});
+        text1.setTextBounds(680,50,100,32); 
+    },
+
+     update: function () {
+        if(enter.isDown){
+           juego.state.start('inicio');
+        }
+    }
+    
+};
+
 juego.state.add('principal' , FirstState);
 juego.state.add('inicio', inicio);
 juego.state.add('gameover', gameover);
-
 juego.state.start('inicio');
+juego.state.add('Victoria', estadoVictoria);
+
